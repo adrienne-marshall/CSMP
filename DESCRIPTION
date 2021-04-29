@@ -1,0 +1,22 @@
+Package: csmp
+Title: Assess the Climate Sensitivity of Model Performance
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Adrienne",
+           family = "Marshall",
+           role = c("aut", "cre"),
+           email = "adriennemarshall@gatech.edu",
+           comment = c(ORCID = "0000-0001-5555-2548"))
+Description: This package contains a function returns statistics to assess the climate sensitivity of a model, as described in Marshall et al. (2021).
+Users should note a few caveats: this function will not test the quality of fit of your model; we recommend examining the residuals to ensure model assumptions are met. It may be useful to modify this function for your particular use case. For example, the family of GAM used defaults to the assumption of a beta-distributed response variable but this may not be appropriate for your use case. The function assumes that climate and fixed effects observations are supplied in the same order as the model objective function and fixed effect, if included.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    magrittr,
+    dplyr,
+    ggplot2,
+    stats,
+    mgcv
