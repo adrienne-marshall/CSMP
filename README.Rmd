@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of csmp is to assess the climate sensitivity of model performance, as described in Marshall et al. (2021). Please see the manuscript for more details about use and applications. 
+The goal of the **csmp** package is to assess the climate sensitivity of model performance, as described in Marshall et al. (2021). Please see the manuscript for more details about use and applications. 
 
 ## Installation
 
@@ -58,7 +58,7 @@ ans$contour_plot +
 
 The `new_airtemp` and `new_precip` parameters represent the conditions under which to compare the change in model performance. For example, for evaluation of model performance in a 2 °C warming scenario, `new_airtemp` should be 2 °C warmer than historical average air temperature (which can be specified with the `ref_airtemp` parameter or inferred based on the supplied vector of air temperature observations). `new_airtemp` and `new_precip` can each be vectors of length one (representing unidirectional change in climate) or two (to evaluate, e.g., potential changes due to wetting or drying).
 
-In this example, we modify the new values in air temperature and precipitation. Keep in mind the model will be most reliable if predictions are within the range of observed variability. 
+In this example, we modify the new values of air temperature and precipitation. Keep in mind the model will be most reliable if predictions are within the range of observed variability. 
 
 ```{r modify example}
 ans <- csmp(airtemp, precip, objective,

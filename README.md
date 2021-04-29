@@ -7,9 +7,9 @@
 
 <!-- badges: end -->
 
-The goal of csmp is to assess the climate sensitivity of model
-performance, as described in Marshall et al. (2021). Please see the
-manuscript for more details about use and applications.
+The goal of the **csmp** package is to assess the climate sensitivity of
+model performance, as described in Marshall et al. (2021). Please see
+the manuscript for more details about use and applications.
 
 ## Installation
 
@@ -69,7 +69,7 @@ inferred based on the supplied vector of air temperature observations).
 (representing unidirectional change in climate) or two (to evaluate,
 e.g., potential changes due to wetting or drying).
 
-In this example, we modify the new values in air temperature and
+In this example, we modify the new values of air temperature and
 precipitation. Keep in mind the model will be most reliable if
 predictions are within the range of observed variability.
 
