@@ -72,7 +72,7 @@ Assess climate-sensitivity of model performance
 \examples{
 airtemp <- rnorm(20, mean = 0, sd = 1)
 precip <- rnorm(20, mean = 500, sd = 100)
-objective <- runif(20, min = 0, max = 1)
+objective <- rbeta(20, 1, 1)
 
 ans <- csmp(airtemp, precip, objective, return_plot = TRUE)
 ans$stats

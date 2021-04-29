@@ -36,12 +36,12 @@ library(csmp)
 set.seed(10)
 airtemp <- rnorm(20, mean = 0, sd = 1)
 precip <- rnorm(20, mean = 500, sd = 100)
-objective <- runif(20, min = 0, max = 1)
+objective <- rbeta(20, 1, 1)
 
 ans <- csmp(airtemp, precip, objective, return_plot = TRUE)
 ans$stats
-#>     rsquared p_airtemp  p_precip  csmp_warm   csmp_cool   csmp_dry    csmp_wet
-#> 3 -0.0885348 0.8428947 0.5554549 0.01531651 -0.01905679 0.05575412 -0.04555934
+#>      rsquared p_airtemp  p_precip   csmp_warm csmp_cool   csmp_dry    csmp_wet
+#> 3 -0.02086214 0.2880655 0.3052486 -0.04896074 0.1660792 0.09383768 -0.07572375
 ans$contour_plot 
 ```
 
@@ -79,8 +79,8 @@ ans <- csmp(airtemp, precip, objective,
             new_airtemp = c(-4, 4),
             new_precip = c(100, 800))
 ans$stats
-#>     rsquared p_airtemp  p_precip  csmp_warm   csmp_cool  csmp_dry   csmp_wet
-#> 3 -0.0885348 0.8428947 0.5554549 0.05946465 -0.05592653 0.1324672 -0.1411722
+#>      rsquared p_airtemp  p_precip  csmp_warm csmp_cool  csmp_dry   csmp_wet
+#> 3 -0.02086214 0.2880655 0.3052486 -0.1262378 0.4482555 0.2178011 -0.2212498
 ```
 
 # References
