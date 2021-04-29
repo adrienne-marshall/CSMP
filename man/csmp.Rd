@@ -2,7 +2,7 @@
 % Please edit documentation in R/csmp.R
 \name{csmp}
 \alias{csmp}
-\title{Assess climate-sensitive model performance}
+\title{Assess climate-sensitivity of model performance}
 \usage{
 csmp(
   airtemp,
@@ -12,8 +12,8 @@ csmp(
   fixed_return = NULL,
   ref_airtemp = NULL,
   ref_precip = NULL,
-  delta_airtemp = NULL,
-  delta_precip = NULL,
+  new_airtemp = NULL,
+  new_precip = NULL,
   return_model = F,
   return_plot_df = F,
   return_plot = F,
@@ -24,29 +24,29 @@ csmp(
 )
 }
 \arguments{
-\item{airtemp}{Vector of observed annual average air temperatures (°C)}
+\item{airtemp}{Numeric vector of observed annual average air temperatures (°C)}
 
-\item{precip}{Vector of observed annual average precipitation values (°C)}
+\item{precip}{Numeric vector of observed annual average precipitation values (mm)}
 
-\item{objective}{Vector of model objective function results (e.g., RMSE, NSE)}
+\item{objective}{Numeric vector of model objective function results (e.g., RMSE, NSE)}
 
-\item{fixed_var}{If desired, a variable to be used for a fixed effect. Should be a vector of observations of this effect that correspond to the positions of other vectors given to the function.}
+\item{fixed_var}{If desired, a variable to be used for a fixed effect. Should be a vector of observations of this effect that correspond to the positions of other vectors given to the function. This vector can be of class numeric, factor, or character.}
 
-\item{fixed_return}{If a fixed effect variable is provided, this should be a value of the fixed effect variable that should be used to return answers. Must be a value from within the fixed effect variable vector. If not provided, will take first value in fixed_var}
+\item{fixed_return}{If a fixed effect variable is provided, this should be a numeric value of the fixed effect variable that should be used to return answers. Must be a value from within the fixed effect variable vector. If not provided, will take first value in fixed_var}
 
 \item{ref_airtemp}{The reference value of air temperature (°C) in a historical average year. If not provided, will be set to mean of observed vector.}
 
 \item{ref_precip}{The reference value of precipitation (mm) in a historical average year. If not provided, will be set to mean of observed vector.}
 
-\item{delta_airtemp}{The minimum and maximum air temperature values (°C) for comparison. If not supplied, will be set to the 5th and 95th percentiles of the range of observations.}
+\item{new_airtemp}{The air temperature values (°C) to be used for comparison. If not supplied, will be set to the 5th and 95th percentiles of the range of observations. This should be a vector of length one (representing unidirectional climate change) or two (representing potential change in two directions - e.g., wetting or drying).}
 
-\item{delta_precip}{The minimum and maximum precipitation values (mm) for comparison. If not supplied, will be set to the 5th and 95th percentiles of the range of observations.}
+\item{new_precip}{The precipitation values (mm) for comparison. See notes for new_airtemp.}
 
 \item{return_model}{Should the function return the model object? This is useful for examining residuals, but could lead to large outputs.}
 
 \item{return_plot_df}{Should the function return a data frame that can be used to make a contour plot?}
 
-\item{return_plot}{Should the function return a contour plot showing the results? Note, the plot returned is a ggplot() object and can be modified with additional calls to ggplot2 (see examples)}
+\item{return_plot}{Should the function return a contour plot showing the results? The plot returned is a ggplot() object and can be modified with additional calls to ggplot2 (see package readme).}
 
 \item{return_pred}{Should the function return predicted error for the supplied values of airtemp and precip?}
 
@@ -54,13 +54,20 @@ csmp(
 
 \item{precip_limits}{Limits of range on which to predict precip if returning plot_df}
 
-\item{k_val}{Number of knots to use in gam - equivalent to k in gam()}
+\item{k_val}{Number of knots to use in gam - equivalent to k in gam(). Defaults to 3.}
 }
 \value{
-Data frame with climate-sensitive model performance for due to precipitation and air temperature
+A list that may contain the following items, depending on input parameters:
+\itemize{
+\item {stats: }{A one-row data frame with CSMP statistics}
+\item {model_object: }{The fitted GAM}
+\item {contour_plot: }{A ggplot object showing the shape of the fitted GAM}
+\item {predict_df: }{data frame showing predicted values of the objective function for ref_airtemp, ref_precip, new_airtemp, and new_precip}
+\item {plot_df: }{The data frame used to create contour_plot (same information as predict_df, but predicted over more points for plotting)}
+}
 }
 \description{
-Assess climate-sensitive model performance
+Assess climate-sensitivity of model performance
 }
 \examples{
 airtemp <- rnorm(20, mean = 0, sd = 1)

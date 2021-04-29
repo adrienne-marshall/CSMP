@@ -61,11 +61,11 @@ The `new_airtemp` and `new_precip` parameters represent the conditions under whi
 In this example, we modify the new values in air temperature and precipitation. Keep in mind the model will be most reliable if predictions are within the range of observed variability. 
 
 ```{r modify example}
-ans <- csmp(airtemp, precip, objective,
-            return_plot = TRUE,
-            new_airtemp = c(-4, 4),
-            new_precip = c(100, 800))
-ans$stats
+# ans <- csmp(airtemp, precip, objective,
+#             return_plot = TRUE,
+#             new_airtemp = c(-4, 4),
+#             new_precip = c(100, 800))
+# ans$stats
 ```
 
 # References
