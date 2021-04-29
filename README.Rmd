@@ -24,7 +24,7 @@ The goal of csmp is to assess the climate sensitivity of model performance, as d
 
 You can install csmp from [GitHub](https://github.com/) with:
 
-``` {r installation}
+``` {r installation, eval = F}
 # install.packages("devtools") # if devtools is not already installed
 devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed for older versions of devtools()
 ```
@@ -61,15 +61,15 @@ The `new_airtemp` and `new_precip` parameters represent the conditions under whi
 In this example, we modify the new values in air temperature and precipitation. Keep in mind the model will be most reliable if predictions are within the range of observed variability. 
 
 ```{r modify example}
-# ans <- csmp(airtemp, precip, objective,
-#             return_plot = TRUE,
-#             new_airtemp = c(-4, 4),
-#             new_precip = c(100, 800))
-# ans$stats
+ans <- csmp(airtemp, precip, objective,
+            return_plot = TRUE,
+            new_airtemp = c(-4, 4),
+            new_precip = c(100, 800))
+ans$stats
 ```
 
 # References
 
-Marshall, A.M., T.E. Link, G.N. Flerchinger, D.J. Nicolsky, M.S. Lucash (2021). Ecohydrologic modeling in deciduous boreal forest: Model evaluation for application in non-stationary climates. _*Submitted to Hydrological Processes*_.
+Marshall, A.M., T.E. Link, G.N. Flerchinger, D.J. Nicolsky, M.S. Lucash (2021). Ecohydrologic modeling in a deciduous boreal forest: Model evaluation for application in non-stationary climates. _*Submitted to Hydrological Processes*_.
 
 

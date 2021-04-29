@@ -20,7 +20,7 @@ You can install csmp from [GitHub](https://github.com/) with:
 devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed for older versions of devtools()
 #> Downloading GitHub repo adrienne-marshall/CSMP@main
 #> 
-#>   ✓  checking for file ‘/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/Rtmpte1NOu/remotes347b1005211b/adrienne-marshall-CSMP-8d7e008/DESCRIPTION’ (364ms)
+#>      checking for file ‘/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpJqg7uI/remotes35df1c41ddbe/adrienne-marshall-csmp-49b9c34/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpJqg7uI/remotes35df1c41ddbe/adrienne-marshall-csmp-49b9c34/DESCRIPTION’ (454ms)
 #>   ─  preparing ‘csmp’:
 #> ✓  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts
@@ -28,7 +28,7 @@ devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed fo
 #>   ─  building ‘csmp_0.0.0.9000.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpmHhxlt/temp_libpath31513a8b1ed3'
+#> Installing package into '/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpmHhxlt/temp_libpath31517e073e51'
 #> (as 'lib' is unspecified)
 ```
 
@@ -53,7 +53,7 @@ objective <- runif(20, min = 0, max = 1)
 ans <- csmp(airtemp, precip, objective, return_plot = TRUE)
 ans$stats
 #>     rsquared p_airtemp  p_precip  csmp_warm   csmp_cool   csmp_dry    csmp_wet
-#> 1 -0.0885348 0.8428947 0.5554549 0.01531651 -0.01905679 0.05575412 -0.04555934
+#> 3 -0.0885348 0.8428947 0.5554549 0.01531651 -0.01905679 0.05575412 -0.04555934
 ans$contour_plot 
 ```
 
@@ -86,16 +86,18 @@ precipitation. Keep in mind the model will be most reliable if
 predictions are within the range of observed variability.
 
 ``` r
-# ans <- csmp(airtemp, precip, objective,
-#             return_plot = TRUE,
-#             new_airtemp = c(-4, 4),
-#             new_precip = c(100, 800))
-# ans$stats
+ans <- csmp(airtemp, precip, objective,
+            return_plot = TRUE,
+            new_airtemp = c(-4, 4),
+            new_precip = c(100, 800))
+ans$stats
+#>     rsquared p_airtemp  p_precip  csmp_warm   csmp_cool  csmp_dry   csmp_wet
+#> 3 -0.0885348 0.8428947 0.5554549 0.05946465 -0.05592653 0.1324672 -0.1411722
 ```
 
 # References
 
 Marshall, A.M., T.E. Link, G.N. Flerchinger, D.J. Nicolsky, M.S. Lucash
-(2021). Ecohydrologic modeling in deciduous boreal forest: Model
+(2021). Ecohydrologic modeling in a deciduous boreal forest: Model
 evaluation for application in non-stationary climates. *_Submitted to
 Hydrological Processes_*.
