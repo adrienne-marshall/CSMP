@@ -17,7 +17,7 @@ You can install csmp from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools") # if devtools is not already installed
-devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed for older versions of devtools()
+devtools::install_github("adrienne-marshall/csmp", ref = 'main') # ref needed for older versions of devtools()
 ```
 
 ## Examples
