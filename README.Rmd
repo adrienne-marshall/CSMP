@@ -24,7 +24,7 @@ The goal of csmp is to assess the climate sensitivity of model performance, as d
 
 You can install csmp from [GitHub](https://github.com/) with:
 
-``` {r installation, eval = F}
+``` {r installation, eval = F, message = F}
 # install.packages("devtools") # if devtools is not already installed
 devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed for older versions of devtools()
 ```

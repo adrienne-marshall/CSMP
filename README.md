@@ -18,18 +18,6 @@ You can install csmp from [GitHub](https://github.com/) with:
 ``` r
 # install.packages("devtools") # if devtools is not already installed
 devtools::install_github("adrienne-marshall/CSMP", ref = 'main') # ref needed for older versions of devtools()
-#> Downloading GitHub repo adrienne-marshall/CSMP@main
-#> 
-#>      checking for file ‘/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpJqg7uI/remotes35df1c41ddbe/adrienne-marshall-csmp-49b9c34/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpJqg7uI/remotes35df1c41ddbe/adrienne-marshall-csmp-49b9c34/DESCRIPTION’ (454ms)
-#>   ─  preparing ‘csmp’:
-#> ✓  checking DESCRIPTION meta-information
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>   ─  building ‘csmp_0.0.0.9000.tar.gz’
-#>      
-#> 
-#> Installing package into '/private/var/folders/gc/pm7q4j_n2vq1xsghlzqgzc2c0000gn/T/RtmpmHhxlt/temp_libpath31517e073e51'
-#> (as 'lib' is unspecified)
 ```
 
 ## Examples
