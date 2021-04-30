@@ -17,7 +17,7 @@ You can install csmp from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools") # if devtools is not already installed
-devtools::install_github("adrienne-marshall/csmp", ref = 'main') # ref needed for older versions of devtools()
+devtools::install_github("adrienne-marshall/csmp", ref = 'main') # ref needed for older versions of devtools
 ```
 
 ## Examples
@@ -46,6 +46,12 @@ ans$contour_plot
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+In this example, R<sup>2</sup> is close to 0, and the p-values indicate
+a lack of statistical significance for the effects of air temperature or
+precipitation. This makes sense, given that we used random data to
+generate these values, and is important to evaluate in real use
+contexts.
 
 The output contour plot can be modified with standard ggplot commands:
 
