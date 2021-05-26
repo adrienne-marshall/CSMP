@@ -91,7 +91,8 @@ ans$stats
 
 # References
 
-Marshall, A.M., T.E. Link, G.N. Flerchinger, D.J. Nicolsky, M.S. Lucash
-(2021). Ecohydrologic modeling in a deciduous boreal forest: Model
-evaluation for application in non-stationary climates. *_Submitted to
-Hydrological Processes_*.
+Marshall, A. M., Link, T. E., Flerchinger, G. N., Nicolsky, D. J., &
+Lucash, M. S. (2021). Ecohydrological modeling in a deciduous boreal
+forest: Model evaluation for application in non-stationary climates.
+*_Hydrological Processes_*, n/a(n/a), e14251.
+<https://doi.org/10.1002/hyp.14251>
